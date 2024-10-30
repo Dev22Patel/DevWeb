@@ -1,7 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
-import { Hero } from './components/Hero'
-import ProjectsSection from './components/ProjectSection'
+import { Hero } from './pages/Hero'
+import ProjectsSection from './pages/Projects'
 import profilePhoto from './assets/photos/DEV-PATEL.jpg'
 import { SocialLinks } from './ui/SocialLinks'
 
@@ -10,7 +10,7 @@ export default function App() {
     <Router>
       <div className="min-h-screen bg-black text-white">
         <Navbar />
-        <main className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32 md:pt-40 lg:pt-48">
+        <main className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32 md:pt-40 lg:pt-48" id="hero">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr,0.8fr] gap-8 lg:gap-12 items-start">
             <Hero />
             <div className="relative mt-8 lg:mt-0">
@@ -31,7 +31,7 @@ export default function App() {
             </div>
           </div>
         </main>
-        <div id="#project" className='h-screen'>
+        <div id="projects" className='h-screen'>
             <ProjectsSection />
         </div>
       </div>
