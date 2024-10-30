@@ -9,15 +9,15 @@ export default function App() {
     <Router>
       <div className="min-h-screen bg-black text-white">
         <Navbar />
-        <main className="max-w-6xl mx-auto px-4 pt-48">
-          <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-12 items-start">
+        <main className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32 md:pt-40 lg:pt-48">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr,0.8fr] gap-8 lg:gap-12 items-start">
             <Hero />
-            <div className="relative">
-              <div className="flex flex-col items-end space-y-6">
+            <div className="relative mt-8 lg:mt-0">
+              <div className="flex flex-col items-center lg:items-end space-y-6">
                 <img
                   src={profilePhoto}
                   alt="Profile Photo"
-                  className="rounded-2xl w-full max-w-[460px] h-auto object-cover"
+                  className="rounded-2xl w-full max-w-[300px] sm:max-w-[400px] lg:max-w-[460px] h-auto object-cover"
                   style={{
                     aspectRatio: "1/1",
                     objectFit: "cover"

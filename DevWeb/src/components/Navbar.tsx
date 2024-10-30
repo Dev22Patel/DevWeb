@@ -10,7 +10,7 @@ export function Navbar() {
   return (
     <>
       {/* Desktop Navigation - Keeping original styling */}
-      <nav className="fixed top-6 w-full z-50 hidden md:flex ml-[322px]">
+      <nav className="fixed top-6 w-full z-50 hidden md:flex justify-center">
         <div className="flex items-center justify-start space-x-8 bg-zinc-800 rounded-xl px-6 py-2.5">
           <Link to="/" className="flex items-center space-x-2 group">
             <img
