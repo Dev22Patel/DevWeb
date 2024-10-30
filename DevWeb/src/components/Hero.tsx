@@ -2,7 +2,7 @@ import { GitHubButton } from '../ui/GithubButton'
 
 export function Hero() {
   return (
-    <div className="space-y-8 ml-16">
+    <div className="space-y-6 ml-16">
     <div className='grid-flow-row'>
       <h1 className="text-4xl md:text-6xl font-bold leading-tight">
         Trust me , I&apos;m a{" "}
