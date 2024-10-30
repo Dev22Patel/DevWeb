@@ -1,6 +1,7 @@
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
+import ProjectsSection from './components/ProjectSection'
 import profilePhoto from './assets/photos/DEV-PATEL.jpg'
 import { SocialLinks } from './ui/SocialLinks'
 
@@ -30,6 +31,9 @@ export default function App() {
             </div>
           </div>
         </main>
+        <div id="#project" className='h-screen'>
+            <ProjectsSection />
+        </div>
       </div>
     </Router>
   )
