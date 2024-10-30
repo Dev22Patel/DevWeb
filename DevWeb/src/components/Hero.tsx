@@ -25,7 +25,7 @@ export function Hero() {
 
       <div className="space-y-4">
         <p className="text-lg">
-          Checkout My Work with{" "}
+        Crafting the web , one line of code at a time{" "}
           <span className="font-semibold"></span> ✨
         </p>
 

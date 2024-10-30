@@ -10,7 +10,7 @@ export default function App() {
       <div className="min-h-screen bg-black text-white">
         <Navbar />
         <main className="max-w-6xl mx-auto px-4 pt-48">
-          <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-14 items-start">
+          <div className="grid lg:grid-cols-[1.2fr,0.8fr] gap-12 items-start">
             <Hero />
             <div className="relative">
               <div className="flex flex-col items-end space-y-6">
