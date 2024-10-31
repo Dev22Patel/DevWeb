@@ -42,7 +42,7 @@ const hackathons = [
 
 export const HackathonsSection = () => {
   return (
-    <div className="w-full">
+    <div className="w-full mt-24">
       <section className="py-8 md:py-16">
         <div className="container px-4 md:px-6 mx-auto max-w-6xl">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">

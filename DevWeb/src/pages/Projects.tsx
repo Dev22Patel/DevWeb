@@ -1,5 +1,6 @@
 import { ExternalLink, Github } from 'lucide-react';
 import { BorderBeam } from '@/components/ui/border-beam';
+import cookbook from '../assets/photos/cook-book.png';
 interface ProjectProps {
   title: string;
   description: string;
@@ -69,37 +70,35 @@ const ProjectCard: React.FC<ProjectProps> = ({
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "Project One",
-      description: "A brief description of your first project...",
-      tags: ["React", "Node.js", "MongoDB"],
-      liveUrl: "https://project1.com",
-      githubUrl: "https://github.com/username/project1",
-      image: "/api/placeholder/400/320",
+      title: "EventHive",
+      description: "Connecting event hosts and sponsors through dynamic auctions.",
+      tags: ["React", "Node.js","Express", "MongoDB"],
+      liveUrl: "https://event-hub-topaz-seven.vercel.app",
+      githubUrl: "https://github.com/Dev22Patel/AT-Project",
+      image: "https://plus.unsplash.com/premium_photo-1668051040456-24c63abd95b4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8ZXZlbnQlMjBsb2dvfGVufDB8fDB8fHww",
     },
     {
-      title: "Project Two",
-      description: "Description of your second project...",
-      tags: ["TypeScript", "Next.js", "Tailwind"],
-      liveUrl: "https://project2.com",
-      githubUrl: "https://github.com/username/project2",
-      image: "/api/placeholder/400/320",
+      title: "AgroAdvice",
+      description: "AgroAdvice recommends optimal pesticides for crop diseases, aiding farmers.",
+      tags: ["Java", "Reactjs", "Tailwind"],
+      githubUrl: "https://github.com/Dev22Patel/AgroAdvice",
+      image: "https://media.istockphoto.com/id/511098265/photo/green-cloud-computing.webp?a=1&b=1&s=612x612&w=0&k=20&c=u0ZP1YjC6gF48e-blgRHbMrD-BFba-QtEi2h2MOXHlM=",
     },
     {
-      title: "Project Three",
-      description: "Overview of your third project...",
-      tags: ["React Native", "Firebase", "Redux"],
-      liveUrl: "https://project3.com",
-      githubUrl: "https://github.com/username/project3",
-      image: "/api/placeholder/400/320",
+      title: "Eduhub",
+      description: "EduHub offers access to a variety of educational courses.",
+      tags: ["Python", "Django", "DBSqlite"],
+      githubUrl: "hhttps://github.com/Dev22Patel/Eduwave",
+      image: "https://media.istockphoto.com/id/1402623775/photo/light-bulb-filled-with-geometric-shapes.webp?a=1&b=1&s=612x612&w=0&k=20&c=aD-aapI-uahgq_ZTCh3B7WEFVRnQZpq-YpUqUh5Kgss=",
     },
     {
-      title: "Project Four",
-      description: "Overview of your fourth project...",
-      tags: ["Vue", "Django", "GraphQL"],
-      liveUrl: "https://project4.com",
-      githubUrl: "https://github.com/username/project4",
-      image: "/api/placeholder/400/320",
-    }
+      title: "Recipe-Haven",
+      description: "Recipe Haven is a web platform for managing and exploring diverse recipes.",
+      tags: [".net", "EF Core", "MVC Pattern"],
+      githubUrl: "https://github.com/Dev22Patel/Recipe-Haven",
+      image: cookbook,
+    },
+
   ];
 
   return (

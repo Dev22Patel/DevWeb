@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import profilePhoto from '../assets/photos/DEV-PATEL.jpg'; // Add back the profile photo import
+import profilePhoto from '../assets/photos/DEV-PATEL.jpg';
 
 export function Navbar() {
   const location = useLocation();
@@ -11,7 +11,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'projects', 'hackathon'];
+      const sections = ['hero', 'projects', 'hackathon', 'skills'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -58,7 +58,7 @@ export function Navbar() {
             className="flex items-center space-x-2 group"
           >
             <img
-              src={profilePhoto}  // Use the imported profile photo
+              src={profilePhoto}
               alt="Profile"
               className="w-8 h-8 rounded-full"
             />
@@ -89,6 +89,17 @@ export function Navbar() {
             Hackathons
           </button>
 
+          <button
+            onClick={() => handleSectionClick('skills')}
+            className={`px-3 py-1 rounded-lg transition-colors ${
+              isActive(null, 'skills')
+                ? 'bg-white/10 text-white'
+                : 'text-gray-300 hover:text-white hover:bg-white/5'
+            }`}
+          >
+            Skills
+          </button>
+
           <Link
             to="/contact"
             className={`px-3 py-1 rounded-lg transition-colors ${
@@ -104,14 +115,14 @@ export function Navbar() {
 
       {/* Mobile Navigation */}
       <nav className="fixed top-0 w-full z-50 md:hidden">
-        <div className="bg-transparent backdrop-blur-md px-4 py-4"> {/* Made navbar transparent */}
+        <div className="bg-transparent backdrop-blur-md px-4 py-4">
           <div className="flex items-center justify-between">
             <button
               onClick={() => handleSectionClick('hero')}
               className="flex items-center space-x-2"
             >
               <img
-                src={profilePhoto}  // Use the imported profile photo
+                src={profilePhoto}
                 alt="Profile"
                 className="w-8 h-8 rounded-full"
               />
@@ -156,6 +167,17 @@ export function Navbar() {
                 }`}
               >
                 Hackathons
+              </button>
+
+              <button
+                onClick={() => handleSectionClick('skills')}
+                className={`px-3 py-2 rounded-lg transition-colors text-left ${
+                  isActive(null, 'skills')
+                    ? 'bg-white/10 text-white'
+                    : 'text-gray-300 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                Skills
               </button>
 
               <Link

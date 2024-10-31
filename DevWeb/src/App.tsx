@@ -6,6 +6,8 @@ import { HackathonsSection } from './pages/Hackathons';
 import { SocialLinks } from './ui/SocialLinks';
 import { useEffect } from 'react';
 import profilepicture from './assets/photos/DEV-PATEL.jpg'
+import SkillsSection from './pages/Skills';
+import EducationSection from './pages/Education';
 // Contact component (you'll need to create this)
 const Contact = () => (
   <div className="min-h-screen flex items-center justify-center">
@@ -66,6 +68,13 @@ const Home = () => {
         <HackathonsSection />
       </section>
 
+
+        <section
+         className="min-h-screen flex items-center scroll-mt-34"
+         id="skills"
+         >
+            <SkillsSection />
+        </section>
     </>
   );
 };
