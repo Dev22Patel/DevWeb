@@ -103,7 +103,21 @@ const ProjectsSection = () => {
   return (
     <section className="min-h-screen w-full bg-black py-24 flex items-center justify-center" id="projects">
       <div className="max-w-3xl mx-auto px-4 w-full">
-        <h2 className="text-3xl font-bold mb-16 text-center text-white">Projects</h2>
+      <div className="flex flex-col items-center justify-center space-y-4 text-center">
+              <div className="space-y-2">
+                <div className="font-bold text-4xl bg-gray-800 rounded-lg bg-foreground text-background inline-block px-3 py-2">
+                  My Projects
+                </div>
+                <h2 className="text-2xl font-bold tracking-tighter sm:text-5xl">
+                  Check out my latest work
+                </h2>
+                <p className="text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed pb-4">
+                  I&apos;ve worked on a variety of projects, from simple
+                  websites to complex web applications. Here are a few of my
+                  favorites.
+                </p>
+              </div>
+            </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start justify-items-center">
           {projects.map((project, index) => (
             <ProjectCard key={index} {...project} />

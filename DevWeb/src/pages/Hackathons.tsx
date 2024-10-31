@@ -42,18 +42,34 @@ const hackathons = [
 
 export const HackathonsSection = () => {
   return (
-    <div className="max-w-6xl mx-auto px-42 sm:px-6 lg:px-8">
-      <section className="py-16">
-        <h2 className="text-3xl font-bold mb-12 text-center text-gray-100">Hackathon Achievements</h2>
-        <div className="max-w-4xl mx-auto">
-          <ul className="space-y-8 relative">
-            {hackathons.map((hackathon, index) => (
-              <HackathonCard
-                key={index}
-                {...hackathon}
-              />
-            ))}
-          </ul>
+    <div className="w-full">
+      <section className="py-8 md:py-16">
+        <div className="container px-4 md:px-6 mx-auto max-w-6xl">
+          <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+            <div className="space-y-2">
+              <div className="font-bold text-3xl md:text-4xl bg-gray-800 rounded-lg bg-foreground text-background inline-block px-3 py-2">
+                Hackathons
+              </div>
+              <h2 className="text-xl md:text-2xl lg:text-5xl font-bold tracking-tighter mt-4">
+                I like building things
+              </h2>
+              <p className="text-muted-foreground text-sm md:text-base lg:text-xl max-w-2xl mx-auto">
+                I have attended 2 hackathons uptill now. It was eye-opening to see the endless possibilities
+                brought to life by a group of motivated and passionate individuals.
+              </p>
+            </div>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <ul className="space-y-8 relative">
+              {hackathons.map((hackathon, index) => (
+                <HackathonCard
+                  key={index}
+                  {...hackathon}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </div>
