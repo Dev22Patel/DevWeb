@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import profilePhoto from '../assets/photos/DEV-PATEL.jpg'; // Add back the profile photo import
 
-export function Navbar() {  // Changed to named export to match your import
+export function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
@@ -89,7 +89,6 @@ export function Navbar() {  // Changed to named export to match your import
             Hackathons
           </button>
 
-
           <Link
             to="/contact"
             className={`px-3 py-1 rounded-lg transition-colors ${
@@ -105,7 +104,7 @@ export function Navbar() {  // Changed to named export to match your import
 
       {/* Mobile Navigation */}
       <nav className="fixed top-0 w-full z-50 md:hidden">
-        <div className="bg-[#171717] px-4 py-4">
+        <div className="bg-transparent backdrop-blur-md px-4 py-4"> {/* Made navbar transparent */}
           <div className="flex items-center justify-between">
             <button
               onClick={() => handleSectionClick('hero')}
@@ -137,7 +136,7 @@ export function Navbar() {  // Changed to named export to match your import
             } overflow-hidden transition-all duration-300 ease-in-out`}
           >
             <div className="flex flex-col space-y-4 pt-4">
-            <button
+              <button
                 onClick={() => handleSectionClick('projects')}
                 className={`px-3 py-2 rounded-lg transition-colors text-left ${
                   isActive(null, 'projects')
@@ -162,7 +161,7 @@ export function Navbar() {  // Changed to named export to match your import
               <Link
                 to="/contact"
                 className={`px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/contact',undefined)
+                  isActive('/contact', undefined)
                     ? 'bg-white/10 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/5'
                 }`}
