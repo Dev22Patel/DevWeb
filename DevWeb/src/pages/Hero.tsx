@@ -2,7 +2,7 @@ import { GitHubButton } from '../ui/GithubButton';
 
 export function Hero() {
   return (
-    <div className="space-y-8 lg:ml-16 md:ml-8 sm:ml-4">
+    <div className="space-y-8 mb-14 lg:ml-16 md:ml-8 sm:ml-4">
       <div className="space-y-1">
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
           Trust me, I'm a{" "}
