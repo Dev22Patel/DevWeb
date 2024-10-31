@@ -1,5 +1,5 @@
 import { ExternalLink, Github } from 'lucide-react';
-
+import { BorderBeam } from '@/components/ui/border-beam';
 interface ProjectProps {
   title: string;
   description: string;
@@ -17,14 +17,15 @@ const ProjectCard: React.FC<ProjectProps> = ({
   githubUrl,
   image,
 }) => (
-  <div className="bg-zinc-900 rounded-xl p-6 flex flex-col space-y-4 w-full max-w-md mx-auto sm:max-w-xl md:max-w-full">
-    <div className="aspect-video w-full rounded-lg overflow-hidden bg-zinc-800">
+  <div className="relative bg-zinc-900 rounded-xl p-6 flex flex-col space-y-4 w-full max-w-md mx-auto sm:max-w-xl md:max-w-full">
+    <div className="aspect-video w-full rounded-lg overflow-hidden bg-zinc-800 ">
       <img
         src={image || "/api/placeholder/400/320"}
         alt={title}
         className="w-full h-full object-cover"
       />
     </div>
+
     <h3 className="text-xl font-semibold text-white">{title}</h3>
     <p className="text-gray-400 flex-grow">{description}</p>
     <div className="flex flex-wrap gap-2">
@@ -60,6 +61,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
           <span>Source Code</span>
         </a>
       )}
+        <BorderBeam size={250} duration={14} delay={8} className='rounded-xl' />
     </div>
   </div>
 );
