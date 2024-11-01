@@ -1,5 +1,4 @@
 import { Github, Linkedin, Twitter } from 'lucide-react'
-import React from 'react'
 
 const LeetCodeIcon = () => (
   <svg
