@@ -14,7 +14,7 @@ export function SocialLinks() {
   return (
     <div className="flex space-x-6">
       <a
-        href="https://leetcode.com/your-username"
+        href="https://leetcode.com/u/22ceuos151/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-zinc-400 hover:text-white transition-colors"
@@ -23,7 +23,7 @@ export function SocialLinks() {
         <span className="sr-only">LeetCode</span>
       </a>
       <a
-        href="https://twitter.com/your-username"
+        href="https://x.com/Patel1684192Dev"
         target="_blank"
         rel="noopener noreferrer"
         className="text-zinc-400 hover:text-white transition-colors"
@@ -32,7 +32,7 @@ export function SocialLinks() {
         <span className="sr-only">Twitter</span>
       </a>
       <a
-        href="https://linkedin.com/in/your-username"
+        href="https://www.linkedin.com/in/dev-patel-230475252/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-zinc-400 hover:text-white transition-colors"
@@ -41,7 +41,7 @@ export function SocialLinks() {
         <span className="sr-only">LinkedIn</span>
       </a>
       <a
-        href="https://github.com/your-username"
+        href="https://github.com/Dev22Patel"
         target="_blank"
         rel="noopener noreferrer"
         className="text-zinc-400 hover:text-white transition-colors"

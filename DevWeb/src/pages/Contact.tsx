@@ -2,26 +2,106 @@ import React, { useState } from 'react'
 import { SocialLinks } from '../ui/SocialLinks'
 import { ConfettiButton } from '../components/ui/confetti'
 import ShimmerButton from '@/components/ui/shimmer-button'
+
 export const Contact: React.FC = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [submitted, setSubmitted] = useState(false)
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    message: ''
+  })
+
+  const validateForm = () => {
+    let isValid = true
+    const newErrors = {
+      name: '',
+      email: '',
+      message: ''
+    }
+
+    // Name validation
+    if (!name.trim()) {
+      newErrors.name = 'Name is required'
+      isValid = false
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!email.trim()) {
+      newErrors.email = 'Email is required'
+      isValid = false
+    } else if (!emailRegex.test(email)) {
+      newErrors.email = 'Please enter a valid email'
+      isValid = false
+    }
+
+    // Message validation
+    if (!message.trim()) {
+      newErrors.message = 'Message is required'
+      isValid = false
+    } else if (message.trim().length < 10) {
+      newErrors.message = 'Message must be at least 5 characters'
+      isValid = false
+    }
+
+    setErrors(newErrors)
+    return isValid
+  }
+
+  const isFormValid = () => {
+    return (
+      name.trim() !== '' &&
+      email.trim() !== '' &&
+      message.trim().length >= 10 &&
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+    )
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Form submitted:', { name, email, message })
-    setSubmitted(true)
-    setName('')
-    setEmail('')
-    setMessage('')
+    if (validateForm()) {
+      console.log('Form submitted:', { name, email, message })
+      setSubmitted(true)
+      setName('')
+      setEmail('')
+      setMessage('')
+      setErrors({
+        name: '',
+        email: '',
+        message: ''
+      })
+    }
   }
 
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Contact Form Section */}
-        <div className="space-y-8">
+      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12">
+        {/* Location Section - Ordered first on mobile */}
+        <div className="order-1 lg:order-2 space-y-8">
+          <h2 className="text-4xl font-bold">Location</h2>
+          <div className="w-full h-[400px] sm:h-[450px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
+            <iframe
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29911.85982864566!2d72.95419164999999!3d20.7697697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0cf2d093169b5%3A0xd5cb8e47784c7e7b!2sBilimora%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1698902027404!5i0!3m2!1sen!2sin!4v1698902027404!5i0"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="rounded-lg grayscale invert brightness-[.85] contrast-[1.1]"
+            />
+          </div>
+          <div>
+            <h3 className="text-2xl font-semibold mb-3">Address</h3>
+            <p className="text-zinc-500">Bilimora, Gujarat, India</p>
+          </div>
+        </div>
+
+        {/* Contact Form Section - Ordered second on mobile */}
+        <div className="order-2 lg:order-1 space-y-8">
           <h2 className="text-4xl font-bold">Have a Coffee With Me :)</h2>
           {submitted ? (
             <div className="bg-zinc-900 rounded-lg p-8 shadow-lg">
@@ -46,8 +126,13 @@ export const Contact: React.FC = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className="w-full px-4 py-3 bg-zinc-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+                  className={`w-full px-4 py-3 bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
+                    errors.name ? 'border-red-500' : 'border-gray-700'
+                  }`}
                 />
+                {errors.name && (
+                  <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+                )}
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-2">
@@ -59,8 +144,13 @@ export const Contact: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-3 bg-zinc-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
+                  className={`w-full px-4 py-3 bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
+                    errors.email ? 'border-red-500' : 'border-gray-700'
+                  }`}
                 />
+                {errors.email && (
+                  <p className="mt-1 text-sm text-red-500">{errors.email}</p>
+                )}
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium mb-2">
@@ -72,54 +162,44 @@ export const Contact: React.FC = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   required
                   rows={4}
-                  className="w-full px-4 py-3 bg-zinc-900 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200"
-                ></textarea>
+                  className={`w-full px-4 py-3 bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
+                    errors.message ? 'border-red-500' : 'border-gray-700'
+                  }`}
+                />
+                {errors.message && (
+                  <p className="mt-1 text-sm text-red-500">{errors.message}</p>
+                )}
               </div>
               <ConfettiButton
                 type="submit"
-                className="relative h-12 w-full text-lg bg-zinc-700 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300"
-                >
+                disabled={!isFormValid()}
+                className={`relative h-12 w-full text-lg font-semibold py-3 px-6 rounded-lg transition duration-300 ${
+                  isFormValid()
+                    ? 'bg-zinc-700 hover:bg-blue-700 text-white'
+                    : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'
+                }`}
+              >
                 Send Message
               </ConfettiButton>
             </form>
           )}
           <div className="pt-8 border-t border-gray-800">
-  <div className="flex items-center justify-between mb-4">
-    <h3 className="text-2xl font-semibold">Connect with me</h3>
-    <a
-      href="DevPatelCV.pdf"  // Replace with your actual resume link
-      download="DevPatelCV.pdf"
-      className="text-white font-bold py-2 px-4 rounded-lg transition duration-300"
-    >
-        <ShimmerButton className='shadow-2xl'>Get My Resume</ShimmerButton>
-    </a>
-  </div>
-  <SocialLinks />
-</div>
-
-        </div>
-
-        {/* Location Section */}
-        <div className="space-y-8">
-          <h2 className="text-4xl font-bold">Location</h2>
-          <div className="w-full h-[400px] sm:h-[450px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29911.85982864566!2d72.95419164999999!3d20.7697697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0cf2d093169b5%3A0xd5cb8e47784c7e7b!2sBilimora%2C%20Gujarat!5e0!3m2!1sen!2sin!4v1698902027404!5i0!3m2!1sen!2sin!4v1698902027404!5i0"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-lg grayscale invert brightness-[.85] contrast-[1.1]"
-            />
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold mb-3">Address</h3>
-            <p className="text-zinc-500">Bilimora, Gujarat, India</p>
+            <div className="flex items-center justify-between mb-4">
+              <h3 className="text-2xl font-semibold">Connect with me</h3>
+              <a
+                href="DevPatelCV.pdf"
+                download="DevPatelCV.pdf"
+                className="text-white font-bold py-2 px-4 rounded-lg transition duration-300"
+              >
+                <ShimmerButton className="shadow-2xl">Get My Resume</ShimmerButton>
+              </a>
+            </div>
+            <SocialLinks />
           </div>
         </div>
       </div>
     </div>
   )
 }
+
+export default Contact
