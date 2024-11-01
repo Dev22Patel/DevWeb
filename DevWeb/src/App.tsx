@@ -7,12 +7,7 @@ import { SocialLinks } from './ui/SocialLinks';
 import { useEffect } from 'react';
 import profilepicture from './assets/photos/DEV-PATEL.jpg'
 import SkillsSection from './pages/Skills';
-// Contact component (you'll need to create this)
-const Contact = () => (
-  <div className="min-h-screen flex items-center justify-center">
-    <h1>Contact Page</h1>
-  </div>
-);
+import { Contact } from './pages/Contact';
 
 // Home component that contains all sections
 const Home = () => {
@@ -73,6 +68,13 @@ const Home = () => {
          id="skills"
          >
             <SkillsSection />
+        </section>
+
+        <section
+         className="min-h-screen flex items-center scroll-mt-34"
+         id="contact"
+         >
+            <Contact />
         </section>
     </>
   );

@@ -10,9 +10,6 @@ export function Hero() {
             web-developer.
           </span>
         </h1>
-        <div className="text-zinc-400 text-base sm:text-lg font-medium">
-          (maybe)
-        </div>
       </div>
       <div className="space-y-6">
         <p className="text-base sm:text-lg text-zinc-400 max-w-2xl leading-relaxed">

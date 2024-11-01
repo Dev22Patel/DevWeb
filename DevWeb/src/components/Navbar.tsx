@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import profilePhoto from '../assets/photos/DEV-PATEL.jpg';
 
@@ -11,7 +11,7 @@ export function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'projects', 'hackathon', 'skills'];
+      const sections = ['hero', 'projects', 'hackathon', 'skills','contact'];
       const currentSection = sections.find(section => {
         const element = document.getElementById(section);
         if (element) {
@@ -27,7 +27,7 @@ export function Navbar() {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -100,16 +100,16 @@ export function Navbar() {
             Skills
           </button>
 
-          <Link
-            to="/contact"
+          <button
+            onClick={()=>handleSectionClick('contact')}
             className={`px-3 py-1 rounded-lg transition-colors ${
-              isActive('/contact', undefined)
+              isActive(null,'contact')
                 ? 'bg-white/10 text-white'
                 : 'text-gray-300 hover:text-white hover:bg-white/5'
             }`}
           >
             Contact Me
-          </Link>
+          </button>
         </div>
       </nav>
 
@@ -180,17 +180,16 @@ export function Navbar() {
                 Skills
               </button>
 
-              <Link
-                to="/contact"
+              <button
+                onClick={() => handleSectionClick('contact')}
                 className={`px-3 py-2 rounded-lg transition-colors ${
-                  isActive('/contact', undefined)
+                  isActive(null,'/contact')
                     ? 'bg-white/10 text-white'
                     : 'text-gray-300 hover:text-white hover:bg-white/5'
                 }`}
-                onClick={() => setIsOpen(false)}
               >
                 Contact Me
-              </Link>
+              </button>
             </div>
           </div>
         </div>

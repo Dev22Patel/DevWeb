@@ -2,7 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 
 // Import icons from a hypothetical icons file
-import { ReactIcon, TypeScriptIcon, JavaScriptIcon, HTMLIcon, CSSIcon, NodeIcon, ExpressIcon, MongoDBIcon,JavaIcon} from './icons/icons'
+import { ReactIcon, TypeScriptIcon, JavaScriptIcon, HTMLIcon, CSSIcon, NodeIcon, ExpressIcon, MongoDBIcon,JavaIcon,SpringBootIcon,DjangoIcon,FlutterIcon,GitIcon,AWSIcon} from './icons/icons'
 
 interface Skill {
   name: string
@@ -17,9 +17,14 @@ const skills: Skill[] = [
   { name: 'HTML', icon: <HTMLIcon />, color: '#E34F26' },
   { name: 'CSS', icon: <CSSIcon />, color: '#1572B6' },
   { name: 'Node.js', icon: <NodeIcon />, color: '#339933' },
-  { name: 'Express', icon: <ExpressIcon />, color: '#000000' },
+  { name: 'Express', icon: <ExpressIcon />, color: 'white' },
   { name: 'MongoDB', icon: <MongoDBIcon />, color: '#47A248' },
   { name: 'Java' , icon: <JavaIcon />, color: '#' },
+  { name: 'Django', icon: <DjangoIcon />, color: 'green' },
+  { name: 'Spring Boot', icon: <SpringBootIcon />, color: '#6DB33F' },
+  { name: 'Flutter', icon: <FlutterIcon />, color: '#02569B' },
+  { name: 'Git', icon: <GitIcon />, color: '#F05032'},
+  { name: 'AWS', icon: <AWSIcon />, color: '#FF9900'},
 ]
 
 const SkillIcon: React.FC<{ skill: Skill }> = ({ skill }) => (
