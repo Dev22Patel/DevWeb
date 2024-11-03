@@ -55,7 +55,7 @@ export const Contact: React.FC = () => {
     return (
       name.trim() !== '' &&
       email.trim() !== '' &&
-      message.trim().length >= 10 &&
+      message.trim().length >= 1 &&
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
     )
   }
