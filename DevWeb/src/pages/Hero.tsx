@@ -18,10 +18,6 @@ export function Hero() {
             Google Developer Student Club (GDSC)
           , Dev is dedicated to building creative solutions and enhancing web experiences.
         </p>
-        <div className="flex items-center space-x-2 text-zinc-500 italic">
-          <span>~</span>
-            ChatGPT
-        </div>
       </div>
       <div className="space-y-4 sm:space-y-6">
         <p className="text-base sm:text-lg font-medium flex items-center gap-2">

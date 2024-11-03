@@ -42,8 +42,8 @@ export const Contact: React.FC = () => {
     if (!message.trim()) {
       newErrors.message = 'Message is required'
       isValid = false
-    } else if (message.trim().length < 10) {
-      newErrors.message = 'Message must be at least 5 characters'
+    } else if (message.trim().length < 1) {
+      newErrors.message = 'Message must be at least 1 characters'
       isValid = false
     }
 
