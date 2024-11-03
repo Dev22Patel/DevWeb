@@ -77,7 +77,7 @@ export const Contact: React.FC = () => {
   }
 
   return (
-    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-28 py-16 sm:py-24">
       <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12">
         {/* Location Section - Ordered first on mobile */}
         <div className="order-1 lg:order-2 space-y-8">
@@ -126,7 +126,7 @@ export const Contact: React.FC = () => {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   required
-                  className={`w-full px-4 py-3 bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
+                  className={`w-full px-4 py-3 bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-400 transition duration-200 ${
                     errors.name ? 'border-red-500' : 'border-gray-700'
                   }`}
                 />
@@ -144,7 +144,7 @@ export const Contact: React.FC = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className={`w-full px-4 py-3 bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
+                  className={`w-full px-4 py-3 bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-400 transition duration-200 ${
                     errors.email ? 'border-red-500' : 'border-gray-700'
                   }`}
                 />
@@ -162,7 +162,7 @@ export const Contact: React.FC = () => {
                   onChange={(e) => setMessage(e.target.value)}
                   required
                   rows={4}
-                  className={`w-full px-4 py-3 bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-200 ${
+                  className={`w-full px-4 py-3 bg-zinc-900 border rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-400 transition duration-200 ${
                     errors.message ? 'border-red-500' : 'border-gray-700'
                   }`}
                 />
