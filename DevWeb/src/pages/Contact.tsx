@@ -81,7 +81,7 @@ export const Contact: React.FC = () => {
       <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12">
         {/* Location Section - Ordered first on mobile */}
         <div className="order-1 lg:order-2 space-y-8">
-          <h2 className="text-4xl font-bold">Location</h2>
+          <h2 className="text-4xl font-bold text-stone-200">Location</h2>
           <div className="w-full h-[400px] sm:h-[450px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
             <iframe
               width="100%"
@@ -102,7 +102,7 @@ export const Contact: React.FC = () => {
 
         {/* Contact Form Section - Ordered second on mobile */}
         <div className="order-2 lg:order-1 space-y-8">
-          <h2 className="text-4xl font-bold">Have a Coffee With Me :)</h2>
+          <h2 className="text-4xl font-bold text-stone-200">Have a Coffee With Me :)</h2>
           {submitted ? (
             <div className="bg-zinc-900 rounded-lg p-8 shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Thank you for your message!</h3>
