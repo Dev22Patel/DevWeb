@@ -102,7 +102,7 @@ const ProjectsSection = () => {
   ];
 
   return (
-    <section className="min-h-screen w-full bg-black py-24 flex items-center justify-center" id="projects">
+    <section className="min-h-screen w-full py-24 flex items-center justify-center" id="projects">
       <div className="max-w-3xl mx-auto px-4 w-full">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">

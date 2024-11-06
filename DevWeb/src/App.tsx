@@ -1,24 +1,25 @@
+// src/app/layout.jsx
+import { useEffect } from 'react';
+import { ThemeProvider } from './Provider/theme-provider';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Hero } from './pages/Hero';
 import ProjectsSection from './pages/Projects';
 import { HackathonsSection } from './pages/Hackathons';
 import { SocialLinks } from './ui/SocialLinks';
-import { useEffect } from 'react';
-import profilepicture from './assets/photos/DEV-PATEL.jpg'
+import profilepicture from './assets/photos/DEV-PATEL.jpg';
 import SkillsSection from './pages/Skills';
 import { Contact } from './pages/Contact';
 
 // Home component that contains all sections
 const Home = () => {
-  // Handle initial scroll position based on hash
   useEffect(() => {
-    const hash = window.location.hash.slice(1); // Remove the # symbol
+    const hash = window.location.hash.slice(1);
     if (hash) {
       const element = document.getElementById(hash);
       if (element) {
         setTimeout(() => {
-          element.scrollIntoView({ behavior: 'smooth' , block:'start'});
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }, 100);
       }
     }
@@ -48,47 +49,36 @@ const Home = () => {
         </div>
       </main>
 
-      <section
-        id="projects"
-        className="min-h-screen flex items-center scroll-mt-14"
-      >
+      <section id="projects" className="min-h-screen flex items-center scroll-mt-14">
         <ProjectsSection />
       </section>
 
-      <section
-        className="min-h-screen flex items-center scroll-mt-34"
-        id="hackathon"
-      >
+      <section className="min-h-screen flex items-center scroll-mt-34" id="hackathon">
         <HackathonsSection />
       </section>
 
+      <section className="min-h-screen flex items-center scroll-mt-34" id="skills">
+        <SkillsSection />
+      </section>
 
-        <section
-         className="min-h-screen flex items-center scroll-mt-34"
-         id="skills"
-         >
-            <SkillsSection />
-        </section>
-
-        <section
-         className="min-h-screen flex items-center scroll-mt-34"
-         id="contact"
-         >
-            <Contact />
-        </section>
+      <section className="min-h-screen flex items-center scroll-mt-34" id="contact">
+        <Contact />
+      </section>
     </>
   );
 };
 
 export default function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-black text-white">
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </div>
-    </Router>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <Router>
+        <div className="min-h-screen bg-background text-foreground">
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
