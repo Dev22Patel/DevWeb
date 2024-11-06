@@ -47,7 +47,7 @@ export const HackathonsSection = () => {
         <div className="container px-4 md:px-6 mx-auto max-w-6xl">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <div className="font-bold text-3xl md:text-4xl bg-gray-800 rounded-lg bg-foreground text-background inline-block px-3 py-2">
+              <div className="font-bold text-3xl md:text-4xl bg-gray-800 rounded-lg bg-foreground text-background inline-block px-3 py-2 text-white">
                 Hackathons
               </div>
               <h2 className="text-xl md:text-2xl lg:text-5xl font-bold tracking-tighter mt-4">

@@ -106,7 +106,7 @@ const ProjectsSection = () => {
       <div className="max-w-3xl mx-auto px-4 w-full">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="font-bold text-4xl bg-gray-800 rounded-lg bg-foreground text-background inline-block px-3 py-2">
+                <div className="font-bold text-4xl bg-gray-800 rounded-lg bg-foreground text-background inline-block px-3 py-2 text-white">
                   My Projects
                 </div>
                 <h2 className="text-2xl font-bold tracking-tighter sm:text-5xl">
