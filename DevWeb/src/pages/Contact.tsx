@@ -80,7 +80,7 @@ export const Contact: React.FC = () => {
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-28 py-16 sm:py-24">
       <div className="flex flex-col lg:grid lg:grid-cols-2 gap-12">
         {/* Location Section - Ordered first on mobile */}
-        <div className="order-1 lg:order-2 space-y-8">
+        <div className="order-1 lg:order-2 space-y-6">
           <h2 className="text-4xl font-bold ">Location</h2>
           <div className="w-full h-[400px] sm:h-[450px] lg:h-[500px] rounded-lg overflow-hidden shadow-lg">
             <iframe
@@ -91,20 +91,21 @@ export const Contact: React.FC = () => {
               allowFullScreen
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="rounded-lg grayscale invert brightness-[.85] contrast-[1.1]"
+              className="rounded-lg dark:grayscale dark:invert dark:brightness-[.85] dark:contrast-[1.1] "
             />
           </div>
-          <div>
+          <div className='text-end'>
             <h3 className="text-2xl font-semibold mb-3">Address</h3>
-            <p className="text-zinc-500">Bilimora, Gujarat, India</p>
+            <p className="text-zinc-500 mb-[38.5px]">Bilimora, Gujarat, India</p>
           </div>
+          <hr/>
         </div>
 
         {/* Contact Form Section - Ordered second on mobile */}
         <div className="order-2 lg:order-1 space-y-8">
           <h2 className="text-4xl font-bold">Have a Coffee With Me :)</h2>
           {submitted ? (
-            <div className="bg-zinc-900 rounded-lg p-8 shadow-lg">
+            <div className="dark:bg-zinc-900 bg-slate-100 rounded-lg p-8 shadow-lg">
               <h3 className="text-2xl font-semibold mb-4">Thank you for your message!</h3>
               <p className="mb-4">I'll get back to you as soon as possible.</p>
               <button
@@ -175,7 +176,7 @@ export const Contact: React.FC = () => {
                 disabled={!isFormValid()}
                 className={`relative h-12 w-full text-lg font-semibold py-3 px-6 rounded-lg transition duration-300 ${
                   isFormValid()
-                    ? 'bg-zinc-700 hover:bg-blue-700 text-white'
+                    ? 'dark:bg-zinc-700 bg-blue-600 hover:bg-blue-700 text-white'
                     : 'bg-zinc-800 text-zinc-500 cursor-not-allowed'
                 }`}
               >
@@ -198,6 +199,7 @@ export const Contact: React.FC = () => {
             </div>
             <SocialLinks />
           </div>
+          <hr/>
         </div>
       </div>
     </div>

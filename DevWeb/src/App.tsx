@@ -48,7 +48,6 @@ const Home = () => {
           </div>
         </div>
       </main>
-
       <section id="projects" className="min-h-screen flex items-center scroll-mt-14">
         <ProjectsSection />
       </section>
