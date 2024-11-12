@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <>
-      <main className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32 md:pt-40 lg:pt-48" id="hero">
+      <main className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32 md:pt-40 lg:pt-44" id="hero">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr,0.8fr] gap-8 lg:gap-12 items-start">
           <Hero />
           <div className="relative mt-8 lg:mt-0">
