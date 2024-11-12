@@ -10,7 +10,7 @@ import { SocialLinks } from './ui/SocialLinks';
 import profilepicture from './assets/photos/DEV-PATEL.jpg';
 import SkillsSection from './pages/Skills';
 import { Contact } from './pages/Contact';
-
+import { Analytics } from "@vercel/analytics/react"
 // Home component that contains all sections
 const Home = () => {
   useEffect(() => {
@@ -78,6 +78,7 @@ export default function App() {
           </Routes>
         </div>
       </Router>
+      <Analytics />
     </ThemeProvider>
   );
 }
