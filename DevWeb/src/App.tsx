@@ -1,4 +1,3 @@
-// src/app/layout.jsx
 import { useEffect } from 'react';
 import { ThemeProvider } from './Provider/theme-provider';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -11,7 +10,7 @@ import profilepicture from './assets/photos/DEV-PATEL.jpg';
 import SkillsSection from './pages/Skills';
 import { Contact } from './pages/Contact';
 import { Analytics } from "@vercel/analytics/react"
-// Home component that contains all sections
+
 const Home = () => {
   useEffect(() => {
     const hash = window.location.hash.slice(1);
@@ -27,6 +26,12 @@ const Home = () => {
 
   return (
     <>
+      {/* Ellipse gradient background effect */}
+      <div className="fixed inset-0 pointer-events-none z-[-1] bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))]
+        from-cyan-500/20 via-purple-500/10 to-blue-500/20
+        dark:from-cyan-500/10 dark:via-purple-500/5 dark:to-blue-500/10">
+      </div>
+
       <main className="max-w-6xl mx-auto px-4 pt-24 sm:pt-32 md:pt-40 lg:pt-44" id="hero">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr,0.8fr] gap-8 lg:gap-12 items-start">
           <Hero />
